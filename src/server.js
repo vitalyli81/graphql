@@ -1,43 +1,9 @@
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
 import { GraphQLSchema, GraphQLObjectType, GraphQLString } from 'graphql';
-import dotenv from 'dotenv';
 
-dotenv.config();
+import schema from "./schema";
 
-const UserType = new GraphQLObjectType({
-  name: 'UserType',
-  fields: {
-    user: {
-      type: GraphQLString
-    },
-    greetings: {
-      type: GraphQLString
-    },
-  }
-});
-
-const queryType = new GraphQLObjectType({
-  name: 'Query',
-  fields: {
-    myUser: {
-      type: UserType,
-      args: {
-        name: { type: GraphQLString }
-      },
-      resolve: (_, { name }) => {
-        return {
-          user: name,
-          greetings: `hello ${name}`
-        }
-      }
-    }
-  }
-});
-
-const schema = new GraphQLSchema({
-  query: queryType,
-})
 
 const app = express();
 
