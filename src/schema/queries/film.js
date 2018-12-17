@@ -8,22 +8,10 @@ export default {
     id: { type: GraphQLString }
   },
   resolve: async (_, { id }) => {
-    const {
-      title,
-      episode_id,
-      opening_crawl,
-      director,
-      producer,
-      release_date
-    } = await findFilm(id);
+    const films = await findFilm(id);
     
     return {
-      title,
-      episode_id,
-      opening_crawl,
-      director,
-      producer,
-      release_date
-    }
+      ...films
+    };
   }
 };
