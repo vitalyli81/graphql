@@ -1,0 +1,33 @@
+{
+  "name": "graphql_swapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --inspect=10111 --exec babel-node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://vitalyli81@github.com/vitalyli81/graphql.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitalyli81/graphql/issues"
+  },
+  "homepage": "https://github.com/vitalyli81/graphql#readme",
+  "dependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.0.2",
+    "nodemon": "^1.18.9"
+  }
+}
