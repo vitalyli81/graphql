@@ -9,12 +9,32 @@ export default {
     id: { type: GraphQLString }
   },
   resolve: async (_, { id }) => {
-    const { name, gender, films } = await findPeople(id);
+    const {
+      name,
+      gender,
+      films,
+      url,
+      height,
+      mass,
+      hair_color,
+      skin_color,
+      eye_color,
+      birth_year,
+      homeworld
+    } = await findPeople(id);
     const filmList = await findDependencies(films);
     
     return {
       name,
       gender,
+      url,
+      height,
+      mass,
+      hair_color,
+      skin_color,
+      eye_color,
+      birth_year,
+      homeworld,
       films: filmList
     }
   }
