@@ -5,7 +5,7 @@ dotenv.config();
 
 const { SWAPI_BASE } = process.env;
 
-export const findPeople = (path) => {
+export const findPerson = (path) => {
   return fetch(`${SWAPI_BASE}people/${path}`)
     .then(resp => {
       if (resp.ok) {

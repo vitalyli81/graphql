@@ -1,7 +1,7 @@
 import {
   GraphQLObjectType,
   GraphQLString,
-  //GraphQLList
+  GraphQLList,
 } from "graphql";
 
 export default new GraphQLObjectType({
@@ -14,6 +14,5 @@ export default new GraphQLObjectType({
     release_date: { type: GraphQLString },
     opening_crawl: { type: GraphQLString },
     url: { type: GraphQLString },
-    //characters: {type: new GraphQLList(GraphQLString)}
   }
 });

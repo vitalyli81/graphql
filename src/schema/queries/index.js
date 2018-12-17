@@ -1,9 +1,9 @@
 import { GraphQLObjectType } from "graphql";
-import people from './people';
+import person from './person';
 import film from './film';
 
 const fields = {
-  people,
+  person,
   film,
 };
 

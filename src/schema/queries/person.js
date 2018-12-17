@@ -1,17 +1,17 @@
 import { GraphQLString } from "graphql";
-import PeopleType from "../types/people";
-import { findPeople } from '../../store/people';
+import PesronType from "../types/person";
+import { findPerson } from '../../store/pesron';
 
 export default {
-  type: PeopleType,
+  type: PesronType,
   args: {
     id: { type: GraphQLString }
   },
   resolve: async (_, { id }) => {
-    const result = await findPeople(id);
+    const people = await findPerson(id);
     
     return {
-      ...result
+      ...people
     }
   }
 };
