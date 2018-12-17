@@ -1,12 +1,15 @@
 import { GraphQLString } from "graphql";
 import UserType from "../types/user";
+import find from '../../store/user';
 
 const myUser = {
   type: UserType,
   args: {
-    name: { type: GraphQLString }
+    id: { type: GraphQLString }
   },
-  resolve: (_, { name }) => {
+  resolve: async (_, { id }) => {
+    const { name } = await find(id);
+    
     return {
       user: name,
       greetings: `hello ${name}`
