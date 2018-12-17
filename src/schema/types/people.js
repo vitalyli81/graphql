@@ -3,8 +3,9 @@ import {
   GraphQLString,
   GraphQLList
 } from "graphql";
+
 import FilmType from "./film";
-import { findDependencies } from '../../utils'
+import { findDependencies } from '../../utils';
 
 export default new GraphQLObjectType({
   name: 'PeopleType',
