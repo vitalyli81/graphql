@@ -5,8 +5,8 @@ dotenv.config();
 
 const { SWAPI_BASE } = process.env;
 
-const find = (path) => {
-  return fetch(`${SWAPI_BASE}people/${path}`)
+export const find = (path) => {
+  return fetch(`${SWAPI_BASE}${path}`)
     .then(resp => {
       if (resp.ok) {
         return resp.json();
@@ -15,5 +15,3 @@ const find = (path) => {
     })
     .then(json => json)
 };
-
-export default find;

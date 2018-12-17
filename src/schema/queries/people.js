@@ -1,6 +1,6 @@
 import { GraphQLString } from "graphql";
 import PeopleType from "../types/people";
-import find from '../../store/user';
+import { findPeople } from '../../store/people';
 
 export default {
   type: PeopleType,
@@ -8,11 +8,11 @@ export default {
     id: { type: GraphQLString }
   },
   resolve: async (_, { id }) => {
-    const { name } = await find(id);
+    const { name, gender } = await findPeople(id);
     
     return {
-      user: name,
+      name,
+      gender
     }
   }
 };
-

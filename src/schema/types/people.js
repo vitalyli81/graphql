@@ -1,14 +1,12 @@
 import {
   GraphQLObjectType,
   GraphQLString,
- } from "graphql";
+} from "graphql";
 
- export default new GraphQLObjectType({
+export default new GraphQLObjectType({
   name: 'PeopleType',
   fields: {
-    user: {
-      type: GraphQLString
-    },
+    name: { type: GraphQLString },
+    gender: { type: GraphQLString }
   }
 });
-
