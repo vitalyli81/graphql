@@ -1,9 +1,9 @@
 import { GraphQLString } from "graphql";
-import UserType from "../types/user";
+import PeopleType from "../types/people";
 import find from '../../store/user';
 
-const myUser = {
-  type: UserType,
+export default {
+  type: PeopleType,
   args: {
     id: { type: GraphQLString }
   },
@@ -12,9 +12,7 @@ const myUser = {
     
     return {
       user: name,
-      greetings: `hello ${name}`
     }
   }
-}
+};
 
-export default myUser;
