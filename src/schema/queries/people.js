@@ -8,11 +8,12 @@ export default {
     id: { type: GraphQLString }
   },
   resolve: async (_, { id }) => {
-    const { name, gender } = await findPeople(id);
+    const { name, gender, films } = await findPeople(id);
     
     return {
       name,
-      gender
+      gender,
+      films
     }
   }
 };
