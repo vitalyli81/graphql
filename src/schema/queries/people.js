@@ -1,7 +1,6 @@
 import { GraphQLString } from "graphql";
 import PeopleType from "../types/people";
 import { findPeople } from '../../store/people';
-import { findDependencies } from '../../utils'
 
 export default {
   type: PeopleType,
@@ -10,11 +9,9 @@ export default {
   },
   resolve: async (_, { id }) => {
     const result = await findPeople(id);
-    const films = await findDependencies(result.films);
     
     return {
-      ...result,
-      films
+      ...result
     }
   }
 };
